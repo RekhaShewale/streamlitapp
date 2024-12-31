@@ -3,4 +3,4 @@ RUN pip install streamlit
 WORKDIR /var
 COPY etl.py /var	
 EXPOSE 8501
-CMD["streamlit","run","stl.py"]
+CMD ["streamlit","run","etl.py"]

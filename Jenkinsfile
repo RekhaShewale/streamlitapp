@@ -6,5 +6,15 @@ pipeline{
 				git url:"https://github.com/RekhaShewale/streamlitapp.git", branch:'main'
 			}
 		}
+		stage("Build Docker image"){
+			steps{
+				sh 'docker build -t myimage .'
+			}
+		}
+		stage("Create Container"){
+			steps{
+				sh 'docker run -d -p 8501:8501 myimage'
+			}
+		}
 	}
 }
